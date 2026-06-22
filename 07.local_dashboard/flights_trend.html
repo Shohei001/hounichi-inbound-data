@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:injected -->
+  <meta name="description" content="国際定期便の週間便数の推移を、方面別・空港別・総便数で可視化。コロナ前比・最新動向を一覧。">
+  <link rel="canonical" href="https://hounichi-inbound-data.com/flights_trend.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="インバウンド動向ダッシュボード">
+  <meta property="og:title" content="直行便の推移｜インバウンド動向ダッシュボード">
+  <meta property="og:description" content="国際定期便の週間便数の推移を、方面別・空港別・総便数で可視化。コロナ前比・最新動向を一覧。">
+  <meta property="og:url" content="https://hounichi-inbound-data.com/flights_trend.html">
+  <meta property="og:image" content="https://hounichi-inbound-data.com/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>直行便の推移｜インバウンド動向ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ft-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media (max-width:920px){.ft-grid{grid-template-columns:1fr;}}
+    .panel-box{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px;}
+    .panel-box h3{margin:0 0 4px;font-size:15px;}
+    .panel-box p.sub{margin:0 0 8px;font-size:12px;color:#64748b;}
+    .panel-box svg{width:100%;height:auto;display:block;}
+    .legend{font-size:12px;color:#475569;display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 0;}
+    .legend span{display:flex;align-items:center;gap:5px;}
+    .legend i{width:10px;height:10px;border-radius:3px;display:inline-block;}
+    .ft-note{margin-top:12px;padding:12px 14px;background:#f0f9ff;border:1px solid #e0f2fe;border-radius:10px;font-size:13px;color:#0c4a6e;line-height:1.7;}
+    .ft-caption{font-size:12px;color:#94a3b8;margin-top:10px;line-height:1.6;}
+  </style>
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Direct flights — trend</p>
+        <h1>直行便の最新動向と推移</h1>
+        <nav class="top-links" aria-label="関連ページ">
+          <a class="top-link" href="index.html">ダッシュボード</a>
+          <a class="top-link" href="sources.html">データソース集</a>
+          <a class="top-link" href="market_portfolio.html">市場ポートフォリオ</a>
+          <a class="top-link" href="journey.html">ジャーニー診断</a>
+          <a class="top-link" href="directflights.html">直行便の状況</a>
+          <a class="top-link active" href="flights_trend.html">直行便の推移</a>
+                  <a class="top-link" href="privacy.html">プライバシー</a>
+                  <a class="top-link" href="about.html">このサイトについて</a>
+          <a class="top-link" href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <p class="ft-caption">問い: <strong>供給はどこまで戻り、どの方面・空港が伸びているか</strong>。各期スケジュール当初（第1週）の計画便数（便/週、旅客＋貨物）。</p>
+
+    <section class="summary-grid" aria-label="最新動向">
+      <article class="metric"><span>最新(2026年夏期)</span><strong id="mLatest">-</strong><small>便/週・国際定期便</small></article>
+      <article class="metric"><span>前年同期比</span><strong id="mYoY">-</strong><small>2025年夏期比</small></article>
+      <article class="metric"><span>コロナ前比</span><strong id="m2019">-</strong><small>2019年冬期比</small></article>
+      <article class="metric"><span>ダイヤ期間</span><strong>夏:3月末〜10月末</strong><small>冬:10月末〜3月末</small></article>
+    </section>
+
+    <section class="panel-box" style="margin-top:4px;">
+      <h3>総便数の推移</h3>
+      <p class="sub">国際定期便の週間便数（旅客＋貨物 と 旅客便）。2019年冬期＝コロナ前基準。</p>
+      <svg id="totalChart" role="img" aria-label="総便数の推移"></svg>
+      <div class="ft-note" id="latestNote">
+        <strong>2026年夏期の動向:</strong> 総便数は5,996.5便/週で前年同期比▲3%（旅客便▲4%／貨物便＋8%）。
+        方面別では<strong>中国路線が大幅減</strong>の一方、韓国・台湾・香港・マレーシア・インドのアジア路線や米国本土・欧州路線が増加。
+        空港別では主要5空港のうち<strong>羽田・福岡</strong>が前年超え、<strong>地方空港全体も増加</strong>（タイ・韓国・マレーシア・台湾便が増）。
+      </div>
+    </section>
+
+    <section class="ft-grid" style="margin-top:16px;">
+      <div class="panel-box">
+        <h3>方面別の推移</h3>
+        <p class="sub">2019年冬期〜2025年夏期（便/週）。</p>
+        <svg id="directionChart" role="img" aria-label="方面別の推移"></svg>
+        <div class="legend" id="directionLegend"></div>
+      </div>
+      <div class="panel-box">
+        <h3>日本側空港別の推移</h3>
+        <p class="sub">主要5空港＋地方空港計（便/週）。</p>
+        <svg id="airportChart" role="img" aria-label="空港別の推移"></svg>
+        <div class="legend" id="airportLegend"></div>
+      </div>
+    </section>
+
+    <p class="ft-caption">
+      出典: 国土交通省 航空局 各期スケジュール「国際定期便の概要」（方面別動向・空港別動向）。値は各期当初・第1週の計画便数（便/週、旅客＋貨物）。
+      方面別・空港別は2025年夏期までの公表詳細に基づく（2026年夏期は総便数のみ公表）。整合: 各期で方面計＝空港計＝総計を確認済み。
+    </p>
+  </main>
+  <script src="flights_trend.js"></script>
+</body>
+</html>

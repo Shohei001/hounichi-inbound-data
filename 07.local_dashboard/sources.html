@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:injected -->
+  <meta name="description" content="本サイトが利用するJNTO・観光庁・国土交通省などの公的統計データソースの一覧と更新頻度。">
+  <link rel="canonical" href="https://hounichi-inbound-data.com/sources.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="インバウンド動向ダッシュボード">
+  <meta property="og:title" content="データソース集｜インバウンド動向ダッシュボード">
+  <meta property="og:description" content="本サイトが利用するJNTO・観光庁・国土交通省などの公的統計データソースの一覧と更新頻度。">
+  <meta property="og:url" content="https://hounichi-inbound-data.com/sources.html">
+  <meta property="og:image" content="https://hounichi-inbound-data.com/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>データソース集｜インバウンド動向ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <main class="app-shell sources-page">
+    <header class="topbar sources-topbar">
+      <div>
+        <p class="eyebrow">Inbound source library</p>
+        <h1>インバウンドデータソース集</h1>
+        <nav class="top-links" aria-label="関連ページ">
+          <a class="top-link" href="index.html">モニター</a>
+          <a class="top-link" href="market_portfolio.html">市場ポートフォリオ</a>
+          <a class="top-link" href="journey.html">ジャーニー診断</a>
+          <a class="top-link active" href="sources.html">データソース集</a>
+                  <a class="top-link" href="directflights.html">直行便の状況</a>
+                  <a class="top-link" href="flights_trend.html">直行便の推移</a>
+                  <a class="top-link" href="privacy.html">プライバシー</a>
+                  <a class="top-link" href="about.html">このサイトについて</a>
+          <a class="top-link" href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+      <div class="source-meta">
+        <span>登録ソース</span>
+        <strong id="sourceCount">-</strong>
+      </div>
+    </header>
+
+    <section class="panel source-table-panel">
+      <div class="panel-header">
+        <div>
+          <h2>データソース一覧</h2>
+          <p>公的統計、民間ニュース、地域・予測、外部要因の情報源をCSVから表示しています。</p>
+        </div>
+      </div>
+
+      <div class="source-note">
+        <span>確認日はCSVの「次回確認」で管理します。ニュース系は毎日・毎週などの固定表示にしています。</span>
+      </div>
+
+      <div class="table-wrap source-table-wrap">
+        <table class="source-table">
+          <thead>
+            <tr>
+              <th>区分</th>
+              <th>情報源</th>
+              <th>内容</th>
+              <th>更新頻度</th>
+              <th>最新更新</th>
+              <th>次回確認</th>
+              <th>主な用途</th>
+              <th>リンク</th>
+            </tr>
+          </thead>
+          <tbody id="sourceTableBody">
+            <tr>
+              <td colspan="8" class="empty">データソースCSVを読み込んでいます</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="sources.js"></script>
+</body>
+</html>

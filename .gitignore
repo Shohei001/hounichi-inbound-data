@@ -1,0 +1,19 @@
+# 依存・キャッシュ
+node_modules/
+.npm-cache/
+__pycache__/
+*.pyc
+.DS_Store
+
+# ローカル生成物（CloudflareビルドでBuildし直すため不要）
+dist/
+
+# 認証情報（絶対にコミットしない）
+.clasp.json
+.clasprc.json
+.env
+
+# 一時ファイル
+*.log
+_convert.log
+tmp/

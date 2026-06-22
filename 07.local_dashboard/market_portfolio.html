@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:injected -->
+  <meta name="description" content="国別の訪日客数×1人当たり消費単価から市場価値を可視化。規模×成長・人数×単価のマトリクスで重点市場を判断。">
+  <link rel="canonical" href="https://hounichi-inbound-data.com/market_portfolio.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="インバウンド動向ダッシュボード">
+  <meta property="og:title" content="市場ポートフォリオ｜インバウンド動向ダッシュボード">
+  <meta property="og:description" content="国別の訪日客数×1人当たり消費単価から市場価値を可視化。規模×成長・人数×単価のマトリクスで重点市場を判断。">
+  <meta property="og:url" content="https://hounichi-inbound-data.com/market_portfolio.html">
+  <meta property="og:image" content="https://hounichi-inbound-data.com/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>市場ポートフォリオ｜インバウンド動向ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .mp-controls { display:flex; align-items:center; gap:12px; margin:8px 0 4px; }
+    .mp-controls label { font-size:15px; color:#475569; display:flex; gap:8px; align-items:center; }
+    .mp-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media (max-width:880px){ .mp-grid{ grid-template-columns:1fr; } }
+    .mp-panel { background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:18px; box-shadow:0 8px 24px rgba(15,23,42,.08); }
+    .mp-panel h2 { font-size:21px; margin:0 0 4px; }
+    .mp-panel p.sub { font-size:14px; color:#64748b; margin:0 0 10px; line-height:1.5; }
+    .mp-panel svg { width:100%; height:auto; display:block; }
+    table.mp-table { width:100%; border-collapse:collapse; font-size:15px; }
+    table.mp-table th, table.mp-table td { padding:11px 12px; border-bottom:1px solid #eef2f6; text-align:left; }
+    table.mp-table th { color:#64748b; font-weight:600; background:#f8fafc; position:sticky; top:0; }
+    table.mp-table td.num { text-align:right; font-variant-numeric:tabular-nums; }
+    table.mp-table td.pos { color:#16a34a; }
+    table.mp-table td.neg { color:#dc2626; }
+    .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+    .mp-caption { font-size:14px; color:#64748b; margin-top:10px; line-height:1.6; }
+  </style>
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Market portfolio</p>
+        <h1>市場ポートフォリオ</h1>
+        <nav class="top-links" aria-label="関連ページ">
+          <a class="top-link" href="index.html">モニター</a>
+          <a class="top-link active" href="market_portfolio.html">市場ポートフォリオ</a>
+          <a class="top-link" href="journey.html">ジャーニー診断</a>
+          <a class="top-link" href="sources.html">データソース集</a>
+                  <a class="top-link" href="directflights.html">直行便の状況</a>
+                  <a class="top-link" href="flights_trend.html">直行便の推移</a>
+                  <a class="top-link" href="privacy.html">プライバシー</a>
+                  <a class="top-link" href="about.html">このサイトについて</a>
+          <a class="top-link" href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+      <div class="mp-controls">
+        <label>対象年 <select id="yearSelect"></select></label>
+      </div>
+    </header>
+
+    <p class="mp-caption">問い: <strong>どの市場を重点化すべきか</strong>（人数だけでなく価値=単価×人数で判断する）。総消費 = JNTO年間訪日客数 × 1人当たり消費単価（消費動向調査）。</p>
+
+    <section class="summary-grid" aria-label="主要指標">
+      <article class="metric"><span>推計 総消費額</span><strong id="metricTotal">-</strong><small>対象国合計</small></article>
+      <article class="metric"><span>最大市場(総消費)</span><strong id="metricTop">-</strong><small>構成比</small></article>
+      <article class="metric"><span>最高単価市場</span><strong id="metricPremium">-</strong><small>1人当たり</small></article>
+      <article class="metric"><span>単価で順位を落とす市場</span><strong id="metricGap">-</strong><small>人数→消費</small></article>
+    </section>
+
+    <section class="mp-grid">
+      <div class="mp-panel">
+        <h2>規模 × 勢い</h2>
+        <p class="sub">横=訪日客数、縦=総消費の前年比。右上=主力、左上=育成、右下=テコ入れ。</p>
+        <svg id="scatterGrowth" viewBox="0 0 600 400" role="img" aria-label="規模×勢い 散布図"></svg>
+        <p class="sub" id="growthNote"></p>
+      </div>
+      <div class="mp-panel">
+        <h2>人数 × 単価</h2>
+        <p class="sub">横=訪日客数、縦=1人当たり消費単価。右上=最優先、右下=単価引上げ余地。</p>
+        <svg id="scatterPrice" viewBox="0 0 600 400" role="img" aria-label="人数×単価 散布図"></svg>
+        <p class="sub" id="priceNote"></p>
+      </div>
+    </section>
+
+    <section class="mp-panel" style="margin-top:16px;">
+      <h2>市場価値ランキング</h2>
+      <p class="sub">総消費額の大きい順。人数順位との差が「単価の効き方」を示す。</p>
+      <div style="overflow:auto; max-height:560px;">
+        <table class="mp-table" id="rankTable"></table>
+      </div>
+      <p class="mp-caption">
+        注: 総消費は概算（訪日客数≒旅行回数 × 1人1回当たり消費単価）。消費単価は年次確報（2024・2025）。
+        国名は消費データの21区分に合わせ、JNTO側の「豪州」と対応。単価データの無い国（その他アジア等）は対象外。
+        出典: JNTO訪日外客統計 / 観光庁インバウンド消費動向調査(参考2)。
+      </p>
+    </section>
+  </main>
+  <script src="market_portfolio.js"></script>
+</body>
+</html>

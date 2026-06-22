@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:injected -->
+  <meta name="description" content="来訪・滞在・再訪のKPIを国別に正規化し、どの段階がボトルネックかを診断するインバウンドのカスタマージャーニー分析。">
+  <link rel="canonical" href="https://hounichi-inbound-data.com/journey.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="インバウンド動向ダッシュボード">
+  <meta property="og:title" content="カスタマージャーニー診断｜インバウンド動向ダッシュボード">
+  <meta property="og:description" content="来訪・滞在・再訪のKPIを国別に正規化し、どの段階がボトルネックかを診断するインバウンドのカスタマージャーニー分析。">
+  <meta property="og:url" content="https://hounichi-inbound-data.com/journey.html">
+  <meta property="og:image" content="https://hounichi-inbound-data.com/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>カスタマージャーニー診断｜インバウンド動向ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cj-controls{display:flex;align-items:center;gap:12px;margin:8px 0;}
+    .cj-controls label{font-size:15px;color:#475569;display:flex;gap:8px;align-items:center;}
+    .cj-head{display:flex;gap:24px;flex-wrap:wrap;align-items:baseline;margin:4px 0 16px;}
+    .cj-head h2{margin:0;font-size:26px;}
+    .cj-head .bn{font-size:16px;color:#64748b;}
+    .cj-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(360px,.55fr);gap:16px;}
+    @media (max-width:920px){.cj-grid{grid-template-columns:1fr;}}
+    .panel-box{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px;box-shadow:0 8px 24px rgba(15,23,42,.08);}
+    .panel-box h3{margin:0 0 4px;font-size:21px;}
+    .panel-box p.sub{margin:0 0 12px;font-size:14px;color:#64748b;line-height:1.5;}
+    .fn-row{display:grid;grid-template-columns:160px 1fr 64px;align-items:center;gap:10px;margin-bottom:8px;}
+    .fn-row.lead{opacity:.7;}
+    .fn-row.bn .fn-name{font-weight:700;}
+    .fn-name{font-size:13px;color:#334155;line-height:1.3;}
+    .fn-name small{display:block;color:#94a3b8;font-size:11px;font-weight:400;}
+    .fn-bar{background:#f1f5f9;border-radius:8px;height:20px;overflow:hidden;}
+    .fn-fill{height:100%;border-radius:8px;transition:width .3s;}
+    .fn-score{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:14px;}
+    .bn-tag{background:#dc2626;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;}
+    .lead-tag{background:#e2e8f0;color:#64748b;font-size:10px;padding:1px 6px;border-radius:10px;}
+    .cj-stage-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+    @media (max-width:1060px){.cj-stage-flow{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media (max-width:640px){.cj-stage-flow{grid-template-columns:1fr;}}
+    .cj-stage-card{position:relative;min-height:176px;padding:15px;border:1px solid #dbe4ef;border-radius:8px;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%);display:grid;align-content:space-between;gap:10px;}
+    .cj-stage-card.bottleneck{border-color:#fecaca;background:#fff7f7;}
+    .cj-stage-card.lead{opacity:.82;}
+    .stage-top{display:flex;justify-content:space-between;gap:12px;align-items:start;}
+    .stage-index{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;background:#0f766e;color:#fff;font-size:14px;font-weight:850;}
+    .cj-stage-card.lead .stage-index{background:#94a3b8;}
+    .cj-stage-card.bottleneck .stage-index{background:#dc2626;}
+    .stage-name strong{display:block;font-size:20px;}
+    .stage-name small{display:block;margin-top:4px;color:#64748b;font-size:13px;line-height:1.4;}
+    .stage-score{font-size:30px;font-weight:850;line-height:1;text-align:right;}
+    .stage-score small{display:block;margin-top:4px;color:#64748b;font-size:12px;font-weight:700;}
+    .stage-bar{height:12px;border-radius:999px;background:#e2e8f0;overflow:hidden;}
+    .stage-fill{display:block;height:100%;border-radius:999px;}
+    .cj-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px;}
+    @media (max-width:920px){.cj-kpis{grid-template-columns:repeat(2,1fr);}}
+    #bnAction{margin-top:14px;padding:14px 16px;background:#fef2f2;border:1px solid #fee2e2;border-radius:8px;font-size:15px;color:#7f1d1d;line-height:1.65;}
+    table.cj-table{width:100%;border-collapse:collapse;font-size:15px;}
+    table.cj-table th,table.cj-table td{padding:11px 12px;border-bottom:1px solid #eef2f6;text-align:left;}
+    table.cj-table th{color:#64748b;background:#f8fafc;}
+    table.cj-table td.num{text-align:center;}
+    table.cj-table tr.sel{background:#eff6ff;}
+    table.cj-table tr[data-c]{cursor:pointer;}
+    .chip{display:inline-block;min-width:34px;padding:4px 7px;border-radius:8px;color:#fff;font-variant-numeric:tabular-nums;font-size:13px;font-weight:800;}
+    .cj-caption{font-size:14px;color:#64748b;margin-top:10px;line-height:1.6;}
+  </style>
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Customer journey</p>
+        <h1>カスタマージャーニー診断</h1>
+        <nav class="top-links" aria-label="関連ページ">
+          <a class="top-link" href="index.html">モニター</a>
+          <a class="top-link" href="market_portfolio.html">市場ポートフォリオ</a>
+          <a class="top-link active" href="journey.html">ジャーニー診断</a>
+          <a class="top-link" href="sources.html">データソース集</a>
+                  <a class="top-link" href="directflights.html">直行便の状況</a>
+                  <a class="top-link" href="flights_trend.html">直行便の推移</a>
+                  <a class="top-link" href="privacy.html">プライバシー</a>
+                  <a class="top-link" href="about.html">このサイトについて</a>
+          <a class="top-link" href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+      <div class="cj-controls">
+        <label>国・地域 <select id="countrySelect"></select></label>
+      </div>
+    </header>
+
+    <p class="cj-caption">問い: <strong>どの段階が詰まっているか</strong>。各ステージのスコアは全対象国でのKPI相対評価(0-100)。認知/検討/予約は先行指標が未整備のためPhase4で数値化予定。</p>
+
+    <div class="cj-head">
+      <h2 id="cName">-</h2>
+      <span class="bn">ボトルネック段階: <strong id="cBottleneck">-</strong></span>
+    </div>
+
+    <section class="cj-grid">
+      <div class="panel-box">
+        <h3>ジャーニー・ファネル</h3>
+        <p class="sub">認知 → 検討 → 予約 → 来訪 → 滞在 → 再訪。色: 緑=強い / 橙=普通 / 赤=弱い。</p>
+        <div id="funnel"></div>
+        <div id="bnAction"></div>
+      </div>
+      <div class="panel-box">
+        <h3>KPI詳細（2025年）</h3>
+        <p class="sub">選択国の生値。</p>
+        <div class="cj-kpis" id="kpis"></div>
+      </div>
+    </section>
+
+    <section class="panel-box" style="margin-top:16px;">
+      <h3>国別ボトルネック一覧</h3>
+      <p class="sub">行クリックで切替。スコアが最も低い段階がボトルネック。</p>
+      <div style="overflow:auto;max-height:560px;">
+        <table class="cj-table" id="overview"></table>
+      </div>
+      <p class="cj-caption">
+        スコア定義: 来訪=前年比・2019年比、滞在=平均泊数・1人当たり消費・地方泊率、再訪=リピーター率(2回目以降)。各KPIを対象20国でmin-max正規化し平均。
+        地方泊率=1−(東京/大阪/京都の延べ宿泊シェア)。出典: JNTO / 消費動向調査(表4-1・表1-1) / 宿泊旅行統計。
+      </p>
+    </section>
+  </main>
+  <script src="journey.js"></script>
+</body>
+</html>

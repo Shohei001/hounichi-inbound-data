@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:injected -->
+  <meta name="description" content="国際線直行便を日本側空港別・就航国別に可視化。地方空港への直行便や国×空港マトリクスを確認できる。">
+  <link rel="canonical" href="https://hounichi-inbound-data.com/directflights.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="インバウンド動向ダッシュボード">
+  <meta property="og:title" content="直行便の状況｜インバウンド動向ダッシュボード">
+  <meta property="og:description" content="国際線直行便を日本側空港別・就航国別に可視化。地方空港への直行便や国×空港マトリクスを確認できる。">
+  <meta property="og:url" content="https://hounichi-inbound-data.com/directflights.html">
+  <meta property="og:image" content="https://hounichi-inbound-data.com/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>直行便の状況｜インバウンド動向ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .df-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:8px 0;}
+    .df-controls label{font-size:13px;color:#475569;display:flex;gap:6px;align-items:center;}
+    .df-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media (max-width:920px){.df-grid{grid-template-columns:1fr;}}
+    .panel-box{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px;}
+    .panel-box h3{margin:0 0 4px;font-size:15px;}
+    .panel-box p.sub{margin:0 0 10px;font-size:12px;color:#64748b;}
+    .panel-box svg{width:100%;height:auto;display:block;}
+    table.df-table{width:100%;border-collapse:collapse;font-size:13px;}
+    table.df-table th,table.df-table td{padding:6px 8px;border-bottom:1px solid #eef2f6;text-align:left;}
+    table.df-table th{color:#64748b;background:#f8fafc;position:sticky;top:0;}
+    table.df-table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+    .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+    .df-caption{font-size:12px;color:#94a3b8;margin-top:10px;line-height:1.6;}
+    .legend{font-size:12px;color:#64748b;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
+    .legend span{display:flex;align-items:center;gap:5px;}
+    .legend i{width:10px;height:10px;border-radius:3px;display:inline-block;}
+  </style>
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Direct flights</p>
+        <h1>直行便の状況</h1>
+        <nav class="top-links" aria-label="関連ページ">
+          <a class="top-link" href="index.html">ダッシュボード</a>
+          <a class="top-link" href="sources.html">データソース集</a>
+          <a class="top-link" href="market_portfolio.html">市場ポートフォリオ</a>
+          <a class="top-link" href="journey.html">ジャーニー診断</a>
+          <a class="top-link active" href="directflights.html">直行便の状況</a>
+                  <a class="top-link" href="flights_trend.html">直行便の推移</a>
+                  <a class="top-link" href="privacy.html">プライバシー</a>
+                  <a class="top-link" href="about.html">このサイトについて</a>
+          <a class="top-link" href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+      <div class="df-controls">
+        <label>ダイヤ <select id="seasonSelect"></select></label>
+        <label>空港区分 <select id="airportType">
+          <option value="all">すべて</option><option value="major">主要5空港</option><option value="regional">地方空港</option>
+        </select></label>
+        <label>国・地域 <select id="countrySelect"></select></label>
+      </div>
+    </header>
+
+    <p class="df-caption">問い: <strong>需要があっても来られない市場・地域はどこか</strong>（検討段階の先行指標=供給）。直行便の週間便数を国・地域別／日本側空港別／地方空港別に可視化。</p>
+
+    <section class="summary-grid" aria-label="主要指標">
+      <article class="metric"><span>総便数</span><strong id="mTotal">-</strong><small>直行便・週</small></article>
+      <article class="metric"><span>就航 国・地域数</span><strong id="mCountries">-</strong><small>直行便あり</small></article>
+      <article class="metric"><span>就航空港数</span><strong id="mAirports">-</strong><small>日本側</small></article>
+      <article class="metric"><span>地方空港シェア</span><strong id="mRegional">-</strong><small>便数ベース</small></article>
+    </section>
+
+    <section class="df-grid">
+      <div class="panel-box">
+        <h3>国・地域別の供給（便/週）</h3>
+        <p class="sub">直行便の週間便数 上位15。色=地域。</p>
+        <svg id="countryBars" role="img" aria-label="国別 便数"></svg>
+      </div>
+      <div class="panel-box">
+        <h3>日本側空港別（便/週）</h3>
+        <div class="legend"><span><i style="background:#1d4ed8"></i>主要5空港</span><span><i style="background:#0d9488"></i>地方空港</span></div>
+        <svg id="airportBars" role="img" aria-label="空港別 便数"></svg>
+      </div>
+    </section>
+
+    <section class="panel-box" style="margin-top:16px;">
+      <h3>地方空港への直行便</h3>
+      <p class="sub">主要5空港（成田・羽田・関西・中部・福岡）以外。地方創生の受け皿状況。</p>
+      <div style="overflow:auto;max-height:420px;">
+        <table class="df-table" id="regionalTable"></table>
+      </div>
+    </section>
+
+    <section class="panel-box" style="margin-top:16px;">
+      <h3>就航路線一覧</h3>
+      <p class="sub">便数の多い順（上位200）。上部のフィルタで空港区分・国を絞り込み。</p>
+      <div style="overflow:auto;max-height:520px;">
+        <table class="df-table" id="routeTable"></table>
+      </div>
+      <p class="df-caption">
+        出典: 国土交通省 航空局「国際線就航状況」国際定期便(直行便)データ。本ページの詳細データは機械可読で取得できる最新版（2023年夏・冬ダイヤ）を使用。
+        最新の総便数トレンドは航空局の各期スケジュール発表（例: 2026年夏期=5,996.5便/週）も参照。
+        主要5空港=成田・羽田・関西・中部・福岡、それ以外を地方空港として集計。
+      </p>
+    </section>
+  </main>
+  <script src="directflights.js"></script>
+</body>
+</html>

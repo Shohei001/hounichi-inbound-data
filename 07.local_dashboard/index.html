@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:injected -->
+  <meta name="description" content="訪日外客数・都道府県別宿泊・国際線直行便を、JNTO/観光庁/国土交通省の公的統計から無料で可視化。最新動向と年次・国別の比較ができるインバウンド動向ダッシュボード。">
+  <link rel="canonical" href="https://hounichi-inbound-data.com/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="インバウンド動向ダッシュボード">
+  <meta property="og:title" content="インバウンド動向ダッシュボード｜訪日・宿泊・直行便の最新統計">
+  <meta property="og:description" content="訪日外客数・都道府県別宿泊・国際線直行便を、JNTO/観光庁/国土交通省の公的統計から無料で可視化。最新動向と年次・国別の比較ができるインバウンド動向ダッシュボード。">
+  <meta property="og:url" content="https://hounichi-inbound-data.com/">
+  <meta property="og:image" content="https://hounichi-inbound-data.com/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>インバウンド動向ダッシュボード｜訪日・宿泊・直行便の最新統計</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Inbound dashboard</p>
+        <h1>インバウンド動向ダッシュボード</h1>
+        <nav class="top-links" aria-label="関連ページ">
+          <a class="top-link active" href="index.html">ダッシュボード</a>
+          <a class="top-link" href="market_portfolio.html">市場ポートフォリオ</a>
+          <a class="top-link" href="journey.html">ジャーニー診断</a>
+          <a class="top-link" href="directflights.html">直行便の状況</a>
+          <a class="top-link" href="flights_trend.html">直行便の推移</a>
+          <a class="top-link" href="sources.html">データソース集</a>
+                  <a class="top-link" href="privacy.html">プライバシー</a>
+                  <a class="top-link" href="about.html">このサイトについて</a>
+          <a class="top-link" href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+      <nav class="section-jump" aria-label="セクション移動">
+        <a href="#sec1">①訪日動向</a>
+        <a href="#sec2">②国×地域</a>
+        <a href="#sec3">③空港別</a>
+      </nav>
+    </header>
+
+    <!-- ============ Section 1: 全体の訪日動向 ============ -->
+    <section id="sec1" class="dash-section">
+      <div class="sec-head">
+        <h2>① 全体の訪日動向</h2>
+        <div class="controls">
+          <label>国・地域
+            <select id="s1Country"></select>
+          </label>
+          <label>月次推移の期間
+            <select id="s1Range">
+              <option value="24">直近24ヶ月</option>
+              <option value="36" selected>直近36ヶ月</option>
+              <option value="0">全期間</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="metric-row" id="s1Metrics"></div>
+      <div class="panel-2col">
+        <div class="card">
+          <h3>月次推移</h3><p class="sub" id="s1TrendSub"></p>
+          <svg id="s1Trend" role="img"></svg>
+        </div>
+        <div class="card">
+          <h3>年次比較（月別）</h3><p class="sub">同月をコロナ前・各年で比較。</p>
+          <svg id="s1Year" role="img"></svg>
+          <div class="legend" id="s1YearLegend"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Section 2: 国×地域(都道府県) ============ -->
+    <section id="sec2" class="dash-section">
+      <div class="sec-head">
+        <h2>② 国 × 地域（都道府県）の動向</h2>
+        <div class="controls">
+          <div class="seg" id="s2Mode">
+            <button data-mode="country" class="active">国で見る</button>
+            <button data-mode="pref">地域で見る</button>
+          </div>
+          <label id="s2PrimaryWrap">対象 <select id="s2Primary"></select></label>
+          <label>比較 <select id="s2Compare"><option value="">比較なし</option></select></label>
+          <label>集計
+            <select id="s2Period">
+              <option value="latest">最新月</option>
+              <option value="12m" selected>直近12ヶ月</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="metric-row" id="s2Metrics"></div>
+      <div class="panel-2col">
+        <div class="card">
+          <h3 id="s2RankTitle">ランキング</h3><p class="sub" id="s2RankSub"></p>
+          <svg id="s2Rank" role="img"></svg>
+        </div>
+        <div class="card">
+          <h3>月次推移（外国人延べ宿泊者数）</h3><p class="sub" id="s2TrendSub"></p>
+          <svg id="s2Trend" role="img"></svg>
+          <div class="legend" id="s2TrendLegend"></div>
+        </div>
+      </div>
+      <p class="caption">出典: 観光庁 宿泊旅行統計調査（参考第1表 国籍別×都道府県別 外国人延べ宿泊者数, 2024-01〜2026-03）。</p>
+    </section>
+
+    <!-- ============ Section 3: 空港別の動向 ============ -->
+    <section id="sec3" class="dash-section">
+      <div class="sec-head">
+        <h2>③ 空港別の動向（直行便）</h2>
+        <div class="controls">
+          <label>日本側空港
+            <select id="s3Airport"></select>
+          </label>
+        </div>
+      </div>
+      <div class="metric-row" id="s3Metrics"></div>
+      <p class="data-note">
+        <strong>データの鮮度について：</strong>
+        「就航国別の便数」と「国×空港マトリクス」は、<u>航空局が公表する機械可読の最新路線明細＝2023年冬ダイヤ</u>に基づきます
+        （2024・2025年の路線明細は未公表）。一方、<u>空港別の総便数は2025年夏期</u>（推移グラフ・指標カード）まで、総便数の推移は2026年夏期まで反映しています。
+      </p>
+      <div class="panel-2col">
+        <div class="card">
+          <h3 id="s3CountryTitle">就航国・地域別の便数</h3><p class="sub" id="s3CountrySub"></p>
+          <svg id="s3Country" role="img"></svg>
+        </div>
+        <div class="card">
+          <h3>空港別 便数の推移</h3><p class="sub">各期スケジュール当初の便/週（旅客＋貨物）。2019年冬期〜2025年夏期。</p>
+          <svg id="s3Trend" role="img"></svg>
+          <div class="legend" id="s3TrendLegend"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>どの国 → どの空港（便/週マトリクス）</h3>
+        <p class="sub">主要就航国×日本側空港の直行便数（<strong>2023年冬ダイヤ</strong>＝航空局公表の最新路線明細）。色が濃いほど便数が多い。</p>
+        <div class="table-wrap"><table id="s3Matrix" class="matrix"></table></div>
+      </div>
+      <p class="caption">
+        <strong>データ出所</strong><br>
+        ・就航国別便数／国×空港マトリクス: 国土交通省 航空局「国際線就航状況」国際定期便（直行便）データ <strong>2023年冬ダイヤ</strong>（機械可読の最新。2024/2025年の路線明細は未公表）。
+        <a href="https://www.mlit.go.jp/koku/koku_fr19_000036.html" target="_blank" rel="noopener">出典ページ</a><br>
+        ・空港別 便数の推移／2025夏期の空港別便数: 国土交通省 航空局 各期スケジュール「国際定期便の概要」（空港別動向、〜<strong>2025年夏期</strong>、総便数は2026年夏期）。<br>
+        便数の単位は「便/週（旅客＋貨物）」。空港別の搭乗者（旅客）数は公開データが未整備のため本セクションは便数ベース（次フェーズで航空輸送統計の旅客数を追加候補）。
+      </p>
+    </section>
+
+    <p class="caption foot">カスタマージャーニー分析は次フェーズで対応予定。</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
