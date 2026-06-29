@@ -1,7 +1,7 @@
 source_id,category,badges,name,description,update_frequency,latest_update,next_check,usage,url
-jnto_visitors,公的,公的|定量,JNTO 訪日外客統計,国籍・月別の訪日外客数、目的別、年次推移。現在の月次ダッシュボードの中核データ。,月次。推計値と暫定値を段階公表。,2026年5月分の推計値は2026-06-17公表予定。,2026-06-17,国別・年度別・外部イベント前後比較の基礎。,https://www.jnto.go.jp/statistics/data/visitors-statistics/
+jnto_visitors,公的,公的|定量,日本政府観光局（JNTO） 訪日外客統計,国籍・月別の訪日外客数、目的別、年次推移。現在の月次ダッシュボードの中核データ。,月次。推計値と暫定値を段階公表。,2026年5月推計値・2026年3月暫定値を2026-06-17公表。当サイトは2026-06-30反映。,2026-07-15,国別・年度別・外部イベント前後比較の基礎。,https://www.jnto.go.jp/statistics/data/visitors-statistics/
 jnto_statistics_portal,公的,公的|可視化,日本の観光統計データ,訪日外客数、都道府県訪問率、宿泊、旅行消費、満足度などを横断的に確認できるJNTO系ポータル。,元データに応じて月次・四半期・年次。,更新日は元データごとに異なる。,毎月,都道府県・消費・満足度など、現ダッシュボード外の拡張候補探し。,https://statistics.jnto.go.jp/
-jta_accommodation,公的,公的|定量,観光庁 宿泊旅行統計調査,延べ宿泊者数、外国人延べ宿泊者数、都道府県別・国籍別宿泊動向。,月次。第1次速報、第2次速報、年確定値。,ページ最終更新 2026-05-29。2026年4月分第1次速報、2026年3月分第2次速報を掲載。,毎月末,都道府県別の滞在・宿泊の強さを訪日客数と比較。,https://www.mlit.go.jp/kankocho/tokei_hakusyo/shukuhakutokei.html
+jta_accommodation,公的,公的|定量,観光庁 宿泊旅行統計調査,延べ宿泊者数、外国人延べ宿泊者数、都道府県別・国籍別宿泊動向。,月次。第1次速報、第2次速報、年確定値。,2026年4月第2次・5月第1次速報等は追加精査のため2026-07-06公表へ延期。,2026-07-06,都道府県別の滞在・宿泊の強さを訪日客数と比較。,https://www.mlit.go.jp/kankocho/tokei_hakusyo/shukuhakutokei.html
 jta_inbound_consumption,公的,公的|定量,観光庁 インバウンド消費動向調査,訪日外国人の旅行支出、費目別消費、国籍別消費、都道府県別参考表。,四半期・年次。,ページ最終更新 2026-05-28。2026年1-3月期1次速報は2026-04-15。,四半期ごと,人数増と消費増が一致しているか、国別単価の違いを確認。,https://www.mlit.go.jp/kankocho/tokei_hakusyo/gaikokujinshohidoko.html
 jta_travelers,公的,公的|定量,観光庁 訪日外国人旅行者数・出国日本人数,訪日外国人旅行者数と出国日本人数の概要、JNTO・出入国在留管理庁への導線。,年次概要。詳細はJNTO・出入国在留管理庁側で更新。,ページ最終更新 2026-01-21。2025年訪日外国人旅行者数 4268万人を掲載。,年1回,訪日と日本人出国の対比、出入国データの確認導線。,https://www.mlit.go.jp/kankocho/tokei_hakusyo/shutsunyukokushasu.html
 jta_release_schedule,公的,公的|予定,観光庁 観光統計公表予定日,旅行・観光消費動向調査、宿泊旅行統計調査、インバウンド消費動向調査の公表予定。,年度・予定変更時。,ページ最終更新 2026-03-31。,年度末,データ更新作業のカレンダー化、手動更新漏れ防止。,https://www.mlit.go.jp/kankocho/tokei_hakusyo/kohyoyoteibi.html
