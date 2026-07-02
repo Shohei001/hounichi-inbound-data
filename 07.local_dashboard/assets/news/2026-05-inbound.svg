@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">2026年5月インバウンド総評</title>
+  <desc id="desc">訪日外客数355万9,900人と主要市場の動きを表すグラフィック</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#12314b"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#99f6e4"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1085" cy="95" r="180" fill="none" stroke="#5eead4" stroke-opacity=".14" stroke-width="56"/>
+  <g opacity=".16" stroke="#d7f8f2">
+    <path d="M660 160H1120M660 260H1120M660 360H1120M660 460H1120M660 560H1120"/>
+    <path d="M700 130V570M820 130V570M940 130V570M1060 130V570"/>
+  </g>
+  <text x="78" y="92" fill="#99f6e4" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="5">MONTHLY INSIGHT</text>
+  <text x="78" y="180" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">2026年5月</text>
+  <text x="78" y="245" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">インバウンド総評</text>
+  <text x="78" y="390" fill="#fff" font-family="Segoe UI, sans-serif" font-size="102" font-weight="800" letter-spacing="-5">3.56M</text>
+  <text x="82" y="438" fill="#d7f8f2" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="25">訪日外客数 355万9,900人</text>
+  <rect x="78" y="495" width="176" height="54" rx="27" fill="#fff" fill-opacity=".12"/>
+  <text x="104" y="530" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21" font-weight="700">前年比 −3.6%</text>
+  <path d="M675 480C745 455 778 385 840 405S924 338 974 350S1053 238 1120 214" fill="none" stroke="url(#line)" stroke-width="11" stroke-linecap="round"/>
+  <g fill="#fff">
+    <circle cx="675" cy="480" r="10"/><circle cx="840" cy="405" r="10"/><circle cx="974" cy="350" r="10"/><circle cx="1120" cy="214" r="10"/>
+  </g>
+  <text x="666" y="615" fill="#b7d7d5" font-family="Segoe UI, sans-serif" font-size="18">KOREA</text>
+  <text x="824" y="615" fill="#b7d7d5" font-family="Segoe UI, sans-serif" font-size="18">TAIWAN</text>
+  <text x="975" y="615" fill="#b7d7d5" font-family="Segoe UI, sans-serif" font-size="18">U.S.</text>
+</svg>
