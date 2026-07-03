@@ -37,25 +37,43 @@
     .legend i{width:10px;height:10px;border-radius:3px;display:inline-block;}
   </style>
   <script src="analytics.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="nav.js" defer></script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html"><span class="site-brand-name">インバウンド動向ダッシュボード</span><span class="site-brand-tag">INBOUND DATA</span></a>
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="site-nav" aria-label="サイト内メニュー">
+        <a href="index.html">ダッシュボード</a>
+        <div class="nav-group">
+          <button class="nav-group-btn" type="button" aria-expanded="false">分析ツール<span class="nav-caret"></span></button>
+          <div class="nav-dropdown">
+            <a href="market_portfolio.html"><strong>市場ポートフォリオ</strong><small>人数×消費単価で重点市場を判断</small></a>
+            <a href="journey.html"><strong>ジャーニー診断</strong><small>来訪〜再訪のボトルネックを国別に診断</small></a>
+          </div>
+        </div>
+        <div class="nav-group active">
+          <button class="nav-group-btn" type="button" aria-expanded="false">直行便<span class="nav-caret"></span></button>
+          <div class="nav-dropdown">
+            <a href="directflights.html"><strong>直行便の状況</strong><small>就航国×日本側空港の便数を可視化</small></a>
+            <a href="flights_trend.html"><strong>直行便の推移</strong><small>空港別便数の期別トレンド</small></a>
+          </div>
+        </div>
+        <a href="news.html">ニュース・レポート</a>
+        <a href="sources.html">データソース集</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="app-shell">
     <header class="topbar">
       <div>
         <p class="eyebrow">Direct flights</p>
         <h1>直行便の状況</h1>
-        <nav class="top-links" aria-label="関連ページ">
-          <a class="top-link" href="index.html">ダッシュボード</a>
-          <a class="top-link" href="market_portfolio.html">市場ポートフォリオ</a>
-          <a class="top-link" href="journey.html">ジャーニー診断</a>
-          <a class="top-link active" href="directflights.html">直行便の状況</a>
-          <a class="top-link" href="flights_trend.html">直行便の推移</a>
-          <a class="top-link" href="news.html">ニュース・レポート</a>
-          <a class="top-link" href="sources.html">データソース集</a>
-          <a class="top-link" href="about.html">このサイトについて</a>
-          <a class="top-link" href="contact.html">お問い合わせ</a>
-          <a class="top-link" href="privacy.html">プライバシー</a>
-        </nav>
       </div>
       <div class="df-controls">
         <label>ダイヤ <select id="seasonSelect"></select></label>
@@ -110,5 +128,30 @@
     </section>
   </main>
   <script src="directflights.js"></script>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-brand">
+        <p class="footer-title">インバウンド動向ダッシュボード</p>
+        <p class="footer-desc">日本政府観光局（JNTO）・観光庁・国土交通省の公的統計をもとに、訪日・宿泊・直行便の動向を無料で可視化しています。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-head">データを見る</p>
+        <a href="index.html">ダッシュボード</a>
+        <a href="market_portfolio.html">市場ポートフォリオ</a>
+        <a href="journey.html">ジャーニー診断</a>
+        <a href="directflights.html">直行便の状況</a>
+        <a href="flights_trend.html">直行便の推移</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-head">サイト情報</p>
+        <a href="news.html">ニュース・レポート</a>
+        <a href="sources.html">データソース集</a>
+        <a href="about.html">このサイトについて</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="site-footer-bottom"><p>© 2026 インバウンド動向ダッシュボード ・ 出典：日本政府観光局（JNTO）／観光庁／国土交通省</p></div>
+  </footer>
 </body>
 </html>
