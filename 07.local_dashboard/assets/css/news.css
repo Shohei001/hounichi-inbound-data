@@ -344,9 +344,9 @@
 .news-article-header h2 {
   margin: 14px 0 0;
   color: #17202a;
-  font-size: clamp(32px, 5.2vw, 52px);
-  line-height: 1.3;
-  letter-spacing: -0.045em;
+  font-size: clamp(27px, 3.4vw, 38px);
+  line-height: 1.45;
+  letter-spacing: -0.03em;
 }
 
 .news-article-deck {
@@ -1233,7 +1233,7 @@
   }
 
   .news-article-header h2 {
-    font-size: 34px;
+    font-size: 26px;
   }
 
   .news-article-deck {
@@ -1342,4 +1342,87 @@
 .news-toc a:hover {
   color: #0f766e;
   text-decoration: underline;
+}
+
+/* ===== 記事: スティッキー目次・トップへ戻る ===== */
+.news-side-toc {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .news-article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    column-gap: 40px;
+    align-items: start;
+  }
+  .news-side-toc {
+    display: block;
+    position: sticky;
+    top: 88px;
+    padding: 4px 0 4px 16px;
+    border-left: 2px solid #d6e5e2;
+  }
+  .news-side-toc strong {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #0f766e;
+    margin-bottom: 10px;
+  }
+  .news-side-toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .news-side-toc li {
+    margin: 0 0 10px;
+  }
+  .news-side-toc a {
+    color: #637083;
+    font-size: 13px;
+    line-height: 1.6;
+    text-decoration: none;
+    display: block;
+  }
+  .news-side-toc a:hover {
+    color: #0f766e;
+  }
+  .news-side-toc a.current {
+    color: #0f766e;
+    font-weight: 700;
+  }
+  .news-article-content .news-toc {
+    display: none;
+  }
+}
+
+.news-back-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0e262e;
+  color: #9fe1cb;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(10, 29, 35, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 50;
+}
+
+.news-back-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.news-back-top:hover {
+  background: #16414b;
 }
