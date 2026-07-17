@@ -2,21 +2,21 @@
   <title id="title">自治体・DMO・事業者の90日実証</title>
   <desc id="desc">役割、データ、利益配分を決めて地域連携を90日で進めるグラフィック</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#052e2b"/><stop offset=".58" stop-color="#064e3b"/><stop offset="1" stop-color="#92400e"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#effcf8"/><stop offset=".58" stop-color="#e5f7ef"/><stop offset="1" stop-color="#fef3c7"/></linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="13" stdDeviation="16" flood-color="#020617" flood-opacity=".35"/></filter>
   </defs>
   <rect width="1200" height="675" fill="url(#bg)"/>
-  <circle cx="1080" cy="78" r="190" fill="none" stroke="#fdba74" stroke-opacity=".14" stroke-width="58"/>
-  <text x="70" y="84" fill="#a7f3d0" font-family="Segoe UI, sans-serif" font-size="23" font-weight="700" letter-spacing="5">REGIONAL EXECUTION</text>
-  <text x="70" y="169" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">自治体・DMOの事業者連携は</text>
-  <text x="70" y="231" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">「会議」だけでは動かない</text>
-  <text x="70" y="302" fill="#d1fae5" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="24" font-weight="700">1市場・1課題・1商品群で小さく実証</text>
+  <circle cx="1080" cy="78" r="190" fill="none" stroke="#b7791f" stroke-opacity=".10" stroke-width="58"/>
+  <text x="70" y="84" fill="#0f766e" font-family="Segoe UI, sans-serif" font-size="23" font-weight="700" letter-spacing="5">REGIONAL EXECUTION</text>
+  <text x="70" y="169" fill="#123b44" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">自治体・DMOの連携を</text>
+  <text x="70" y="231" fill="#123b44" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">90日で実証する</text>
+  <text x="70" y="302" fill="#315f65" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="24" font-weight="700">1市場・1課題・1商品群で小さく実証</text>
   <g transform="translate(68 362)">
-    <rect width="550" height="76" rx="38" fill="#fff" fill-opacity=".11"/>
-    <text x="32" y="47" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21" font-weight="700">役割 × 最小データ × 費用と利益 × 継続判断</text>
+    <rect width="550" height="76" rx="38" fill="#0f766e" fill-opacity=".09"/>
+    <text x="32" y="47" fill="#0f3d3e" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21" font-weight="700">役割 × 最小データ × 費用と利益 × 継続判断</text>
   </g>
-  <text x="68" y="552" fill="#fff" font-family="Segoe UI, sans-serif" font-size="96" font-weight="800">90 DAYS</text>
-  <text x="72" y="597" fill="#fed7aa" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21">拡大・改善・保留・停止を決める</text>
+  <text x="68" y="552" fill="#0f766e" font-family="Segoe UI, sans-serif" font-size="96" font-weight="800">90 DAYS</text>
+  <text x="72" y="597" fill="#7a5720" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21">拡大・改善・保留・停止を決める</text>
   <g transform="translate(690 92)" filter="url(#shadow)">
     <rect width="420" height="493" rx="31" fill="#f8fafc"/>
     <text x="210" y="52" text-anchor="middle" fill="#0f172a" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="18" font-weight="800">6者の実行ネットワーク</text>

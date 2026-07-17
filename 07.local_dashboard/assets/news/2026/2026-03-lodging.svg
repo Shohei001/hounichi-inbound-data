@@ -2,24 +2,24 @@
   <title id="title">2026年3月 外国人宿泊の地域分析</title>
   <desc id="desc">東京・大阪・京都のシェア56.8%への低下と地方の伸びを表すグラフィック</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e262e"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#dff7f1"/></linearGradient>
   </defs>
   <rect width="1200" height="675" fill="url(#bg)"/>
-  <circle cx="1085" cy="95" r="180" fill="none" stroke="#5eead4" stroke-opacity=".14" stroke-width="56"/>
+  <circle cx="1085" cy="95" r="180" fill="none" stroke="#0f766e" stroke-opacity=".10" stroke-width="56"/>
   <g opacity=".9">
     <rect x="700" y="420" width="90" height="130" rx="8" fill="#5dcaa5"/>
     <rect x="810" y="360" width="90" height="190" rx="8" fill="#9fe1cb"/>
     <rect x="920" y="300" width="90" height="250" rx="8" fill="#d7f8f2"/>
-    <text x="745" y="590" fill="#9fe1cb" font-family="Segoe UI, sans-serif" font-size="22" text-anchor="middle">2024</text>
-    <text x="855" y="590" fill="#9fe1cb" font-family="Segoe UI, sans-serif" font-size="22" text-anchor="middle">2025</text>
-    <text x="965" y="590" fill="#9fe1cb" font-family="Segoe UI, sans-serif" font-size="22" text-anchor="middle">2026</text>
-    <text x="965" y="285" fill="#fff" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" text-anchor="middle">地方の伸び</text>
+    <text x="745" y="590" fill="#315f65" font-family="Segoe UI, sans-serif" font-size="22" text-anchor="middle">2024</text>
+    <text x="855" y="590" fill="#315f65" font-family="Segoe UI, sans-serif" font-size="22" text-anchor="middle">2025</text>
+    <text x="965" y="590" fill="#315f65" font-family="Segoe UI, sans-serif" font-size="22" text-anchor="middle">2026</text>
+    <text x="965" y="285" fill="#123b44" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" text-anchor="middle">地方の伸び</text>
   </g>
-  <text x="78" y="92" fill="#99f6e4" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="5">REGIONAL REPORT</text>
-  <text x="78" y="180" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">2026年3月</text>
-  <text x="78" y="245" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">外国人宿泊の地域分析</text>
-  <text x="78" y="390" fill="#fff" font-family="Segoe UI, sans-serif" font-size="102" font-weight="800" letter-spacing="-3">56.8%</text>
-  <text x="82" y="438" fill="#d7f8f2" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="25">東京・大阪・京都のシェア（2年連続低下）</text>
-  <rect x="78" y="495" width="230" height="54" rx="27" fill="#fff" fill-opacity=".12"/>
-  <text x="104" y="530" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21" font-weight="700">鳥取 前年比＋95.6%</text>
+  <text x="78" y="92" fill="#0f766e" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="5">REGIONAL REPORT</text>
+  <text x="78" y="180" fill="#123b44" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">2026年3月</text>
+  <text x="78" y="245" fill="#123b44" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">外国人宿泊の地域分析</text>
+  <text x="78" y="390" fill="#0f766e" font-family="Segoe UI, sans-serif" font-size="102" font-weight="800" letter-spacing="-3">56.8%</text>
+  <text x="82" y="438" fill="#315f65" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="25">東京・大阪・京都のシェア（2年連続低下）</text>
+  <rect x="78" y="495" width="230" height="54" rx="27" fill="#0f766e" fill-opacity=".10"/>
+  <text x="104" y="530" fill="#0f3d3e" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21" font-weight="700">鳥取 前年比＋95.6%</text>
 </svg>
