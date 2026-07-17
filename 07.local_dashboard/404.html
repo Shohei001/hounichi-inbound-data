@@ -3,26 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1613836910831975" crossorigin="anonymous"></script>
-  <!-- SEO:injected -->
-  <meta name="description" content="本サイトが利用する日本政府観光局（JNTO）・観光庁・国土交通省などの公的統計データソースの一覧と更新頻度。">
-  <link rel="canonical" href="https://hounichi-inbound-data.com/sources">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="インバウンド動向ダッシュボード">
-  <meta property="og:title" content="データソース集｜インバウンド動向ダッシュボード">
-  <meta property="og:description" content="本サイトが利用する日本政府観光局（JNTO）・観光庁・国土交通省などの公的統計データソースの一覧と更新頻度。">
-  <meta property="og:url" content="https://hounichi-inbound-data.com/sources">
-  <meta property="og:image" content="https://hounichi-inbound-data.com/ogp.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>データソース集｜インバウンド動向ダッシュボード</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/analytics.js" defer></script>
+  <base href="/">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="お探しのページは見つかりませんでした。インバウンド動向ダッシュボードの主要ページをご案内します。">
+  <title>ページが見つかりません｜インバウンド動向ダッシュボード</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .not-found{max-width:760px;margin:0 auto;padding:40px 30px;background:#fff;border:1px solid #dce5e8;border-radius:16px;text-align:center;}
+    .not-found-code{margin:0;color:#0f766e;font-size:56px;font-weight:700;letter-spacing:.04em;}
+    .not-found h2{margin:6px 0 12px;color:#123b44;font-size:26px;}
+    .not-found p{color:#53666d;line-height:1.8;}
+    .not-found-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px;text-align:left;}
+    .not-found-links a{display:block;padding:15px;border:1px solid #cfe0e4;border-radius:11px;color:#123b44;text-decoration:none;background:#f7fbfb;}
+    .not-found-links strong{display:block;margin-bottom:5px;}
+    .not-found-links span{color:#71838a;font-size:12px;line-height:1.5;}
+    @media(max-width:700px){.not-found-links{grid-template-columns:1fr;}}
+  </style>
+  <script src="assets/js/analytics.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
-  <link rel="alternate" type="application/rss+xml" title="インバウンド動向ダッシュボード RSS" href="https://hounichi-inbound-data.com/feed.xml">
 </head>
 <body>
   <header class="site-header">
@@ -47,60 +48,28 @@
         </div>
         <a href="news.html">ニュース・レポート</a>
         <a href="resources.html">無料診断</a>
-        <a class="active" href="sources.html">データソース集</a>
+        <a href="sources.html">データソース集</a>
       </nav>
     </div>
   </header>
 
-  <main class="app-shell sources-page">
-    <header class="topbar sources-topbar">
-      <div>
-        <p class="eyebrow">Inbound source library</p>
-        <h1>インバウンドデータソース集</h1>
-      </div>
-      <div class="source-meta">
-        <span>登録ソース</span>
-        <strong id="sourceCount">-</strong>
-      </div>
-    </header>
-
-    <section class="panel source-table-panel">
-      <div class="panel-header">
-        <div>
-          <h2>データソース一覧</h2>
-          <p>公的統計、民間ニュース、地域・予測、外部要因の情報源をCSVから表示しています。</p>
-        </div>
-      </div>
-
-      <div class="source-note">
-        <span>公的統計は日本政府観光局（JNTO）、観光庁、国土交通省などの公表資料を使用し、各データページの掲載値・グラフは当サイトが加工・集計して作成しています。確認日はCSVの「次回確認」で管理します。ニュース系は毎日・毎週などの固定表示にしています。</span>
-      </div>
-
-      <div class="table-wrap source-table-wrap">
-        <table class="source-table">
-          <thead>
-            <tr>
-              <th>区分</th>
-              <th>情報源</th>
-              <th>内容</th>
-              <th>更新頻度</th>
-              <th>最新更新</th>
-              <th>次回確認</th>
-              <th>主な用途</th>
-              <th>リンク</th>
-            </tr>
-          </thead>
-          <tbody id="sourceTableBody">
-            <tr>
-              <td colspan="8" class="empty">データソースCSVを読み込んでいます</td>
-            </tr>
-          </tbody>
-        </table>
+  <main class="app-shell">
+    <header class="topbar"><div>
+      <p class="eyebrow">Not found</p>
+      <h1>ページが見つかりません</h1>
+    </div></header>
+    <section class="not-found">
+      <p class="not-found-code">404</p>
+      <h2>URLが変更されたか、ページが削除された可能性があります。</h2>
+      <p>アドレスをご確認いただくか、以下の主要ページからお探しください。リンク切れを見つけた場合は、お問い合わせページからお知らせいただけると助かります。</p>
+      <div class="not-found-links">
+        <a href="index.html"><strong>ダッシュボード</strong><span>訪日・宿泊・直行便の最新データ</span></a>
+        <a href="news.html"><strong>ニュース・レポート</strong><span>独自分析とインバウンドの実務情報</span></a>
+        <a href="contact.html"><strong>お問い合わせ</strong><span>誤りやリンク切れのご連絡</span></a>
       </div>
     </section>
   </main>
 
-  <script src="assets/js/sources.js"></script>
   <footer class="site-footer">
     <div class="site-footer-inner">
       <div class="footer-brand">

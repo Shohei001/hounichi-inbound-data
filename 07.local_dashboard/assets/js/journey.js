@@ -91,7 +91,7 @@ function renderFunnel(r) {
         <span class="stage-index">${String(index + 1).padStart(2, '0')}</span>
         <div class="stage-score" style="color:${isLead ? '#94a3b8' : scoreColor(score)}">
           ${isLead ? '-' : (score === null ? '-' : score)}
-          <small>${isLead ? '数値化予定' : 'score'}</small>
+          <small>${isLead ? '定量対象外' : 'score'}</small>
         </div>
       </div>
       <div class="stage-name">

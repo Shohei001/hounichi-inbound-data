@@ -39,6 +39,107 @@
   function optOut() { window[DISABLE_FLAG] = true; setState('denied'); }
   function optIn() { window[DISABLE_FLAG] = false; setState('ack'); loadGA(); }
 
+  function sendEvent(name, params) {
+    if (window[DISABLE_FLAG] || typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  }
+
+  function linkLabel(link) {
+    return (link.textContent || link.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim().slice(0, 100);
+  }
+
+  function setupEventTracking() {
+    if (window.__inboundEventTracking) return;
+    window.__inboundEventTracking = true;
+
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest && event.target.closest('a[href]');
+      if (!link) return;
+      var rawHref = link.getAttribute('href') || '';
+      if (!rawHref || rawHref.charAt(0) === '#') return;
+
+      var url;
+      try { url = new URL(link.href, window.location.href); } catch (e) { return; }
+      var common = {
+        link_url: url.href.slice(0, 300),
+        link_text: linkLabel(link),
+        page_path: window.location.pathname
+      };
+      if (link.dataset.resourceId) common.resource_id = link.dataset.resourceId.slice(0, 100);
+      if (link.dataset.trackLocation) common.cta_location = link.dataset.trackLocation.slice(0, 100);
+
+      if (/\/contact(?:\.html)?$/.test(url.pathname)) {
+        sendEvent('contact_click', common);
+      }
+
+      var isDownload = link.hasAttribute('download') || /\.(?:csv|xlsx?|pptx?|pdf|zip)$/i.test(url.pathname);
+      if (isDownload) {
+        sendEvent('download', common);
+      }
+
+      if (url.origin !== window.location.origin) {
+        if (link.closest('.news-article-content, .news-source-box, .caption, .doc')) {
+          sendEvent('source_click', common);
+        }
+        return;
+      }
+
+      if (link.closest('main') && !link.closest('.site-header, .site-footer')) {
+        sendEvent('internal_content_click', common);
+      }
+    });
+
+    document.addEventListener('change', function (event) {
+      var control = event.target;
+      if (!control || control.tagName !== 'SELECT' || !control.closest('main')) return;
+      sendEvent('dashboard_filter', {
+        control_id: control.id || 'unnamed_select',
+        selected_value: String(control.value || '').slice(0, 100),
+        page_path: window.location.pathname
+      });
+    });
+
+    var article = document.querySelector('.news-article-content');
+    if (article) {
+      var sentDepths = {};
+      var thresholds = [25, 50, 75, 100];
+      var onArticleScroll = function () {
+        var rect = article.getBoundingClientRect();
+        var viewportBottom = window.innerHeight;
+        var read = Math.min(article.offsetHeight, Math.max(0, viewportBottom - rect.top));
+        var progress = article.offsetHeight ? (read / article.offsetHeight) * 100 : 0;
+        thresholds.forEach(function (depth) {
+          if (progress >= depth && !sentDepths[depth]) {
+            sentDepths[depth] = true;
+            sendEvent('article_scroll', {
+              percent_scrolled: depth,
+              page_path: window.location.pathname
+            });
+          }
+        });
+        if (sentDepths[100]) window.removeEventListener('scroll', onArticleScroll);
+      };
+      window.addEventListener('scroll', onArticleScroll, { passive: true });
+      onArticleScroll();
+    }
+
+    var contactForm = document.querySelector('.form-wrap iframe');
+    if (contactForm) {
+      if ('IntersectionObserver' in window) {
+        var formObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            sendEvent('contact_form_view', { page_path: window.location.pathname });
+            observer.disconnect();
+          });
+        }, { threshold: 0.5 });
+        formObserver.observe(contactForm);
+      } else {
+        sendEvent('contact_form_view', { page_path: window.location.pathname });
+      }
+    }
+  }
+
   function injectStyles() {
     if (document.getElementById('cc-style')) return;
     var css = document.createElement('style'); css.id = 'cc-style';
@@ -84,6 +185,7 @@
     if (st === 'denied') { window[DISABLE_FLAG] = true; ensureSettingsLink(); }   // 計測しない
     else if (st === 'ack') { loadGA(); ensureSettingsLink(); }                    // 許可済み
     else { loadGA(); showNotice(); }   // オプトアウト方式: 既定で計測しつつ初回告知
+    setupEventTracking();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();

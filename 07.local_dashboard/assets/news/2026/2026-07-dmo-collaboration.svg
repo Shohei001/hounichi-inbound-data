@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">自治体・DMO・事業者の90日実証</title>
+  <desc id="desc">役割、データ、利益配分を決めて地域連携を90日で進めるグラフィック</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#052e2b"/><stop offset=".58" stop-color="#064e3b"/><stop offset="1" stop-color="#92400e"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="13" stdDeviation="16" flood-color="#020617" flood-opacity=".35"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1080" cy="78" r="190" fill="none" stroke="#fdba74" stroke-opacity=".14" stroke-width="58"/>
+  <text x="70" y="84" fill="#a7f3d0" font-family="Segoe UI, sans-serif" font-size="23" font-weight="700" letter-spacing="5">REGIONAL EXECUTION</text>
+  <text x="70" y="169" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">自治体・DMOの事業者連携は</text>
+  <text x="70" y="231" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">「会議」だけでは動かない</text>
+  <text x="70" y="302" fill="#d1fae5" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="24" font-weight="700">1市場・1課題・1商品群で小さく実証</text>
+  <g transform="translate(68 362)">
+    <rect width="550" height="76" rx="38" fill="#fff" fill-opacity=".11"/>
+    <text x="32" y="47" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21" font-weight="700">役割 × 最小データ × 費用と利益 × 継続判断</text>
+  </g>
+  <text x="68" y="552" fill="#fff" font-family="Segoe UI, sans-serif" font-size="96" font-weight="800">90 DAYS</text>
+  <text x="72" y="597" fill="#fed7aa" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21">拡大・改善・保留・停止を決める</text>
+  <g transform="translate(690 92)" filter="url(#shadow)">
+    <rect width="420" height="493" rx="31" fill="#f8fafc"/>
+    <text x="210" y="52" text-anchor="middle" fill="#0f172a" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="18" font-weight="800">6者の実行ネットワーク</text>
+    <g stroke="#94a3b8" stroke-width="4" stroke-linecap="round">
+      <path d="M210 245 210 107M210 245 338 168M210 245 338 331M210 245 210 409M210 245 82 331M210 245 82 168"/>
+    </g>
+    <circle cx="210" cy="245" r="72" fill="#065f46"/>
+    <text x="210" y="237" text-anchor="middle" fill="#fff" font-family="Segoe UI, sans-serif" font-size="34" font-weight="800">DMO</text>
+    <text x="210" y="268" text-anchor="middle" fill="#d1fae5" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="15" font-weight="700">調整・データ</text>
+    <g font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+      <g transform="translate(210 88)"><circle r="49" fill="#0f766e"/><text y="5" fill="#fff">自治体</text></g>
+      <g transform="translate(351 158)"><circle r="49" fill="#0369a1"/><text y="5" fill="#fff">商品</text></g>
+      <g transform="translate(351 344)"><circle r="49" fill="#7c3aed"/><text y="5" fill="#fff">販売</text></g>
+      <g transform="translate(210 427)"><circle r="49" fill="#d97706"/><text y="5" fill="#fff">宿泊・交通</text></g>
+      <g transform="translate(69 344)"><circle r="49" fill="#dc2626"/><text y="5" fill="#fff">地域</text></g>
+      <g transform="translate(69 158)"><circle r="49" fill="#0891b2"/><text y="5" fill="#fff">データ</text></g>
+    </g>
+  </g>
+</svg>

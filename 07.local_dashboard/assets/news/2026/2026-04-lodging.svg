@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">2026年4月 外国人宿泊の地域分析</title>
+  <desc id="desc">東京・大阪・京都で125万人泊減、沖縄で6.6万人泊増となった地域差を表すグラフィック</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e262e"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1085" cy="95" r="180" fill="none" stroke="#5eead4" stroke-opacity=".14" stroke-width="56"/>
+  <g opacity=".92">
+    <rect x="715" y="285" width="95" height="265" rx="8" fill="#d7f8f2"/>
+    <rect x="830" y="355" width="95" height="195" rx="8" fill="#9fe1cb"/>
+    <rect x="945" y="420" width="95" height="130" rx="8" fill="#5dcaa5"/>
+    <text x="762" y="590" fill="#d7f8f2" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="22" text-anchor="middle">三大都市</text>
+    <text x="877" y="590" fill="#d7f8f2" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="22" text-anchor="middle">全国</text>
+    <text x="992" y="590" fill="#d7f8f2" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="22" text-anchor="middle">増加地域</text>
+  </g>
+  <text x="78" y="92" fill="#99f6e4" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="5">REGIONAL REPORT</text>
+  <text x="78" y="180" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">2026年4月</text>
+  <text x="78" y="245" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="43" font-weight="700">外国人宿泊の地域分析</text>
+  <text x="78" y="390" fill="#fff" font-family="Segoe UI, sans-serif" font-size="94" font-weight="800" letter-spacing="-3">−125.2万</text>
+  <text x="82" y="438" fill="#d7f8f2" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="25">東京・大阪・京都の前年差</text>
+  <rect x="78" y="495" width="300" height="54" rx="27" fill="#fff" fill-opacity=".12"/>
+  <text x="104" y="530" fill="#fff" font-family="Yu Gothic UI, Meiryo, sans-serif" font-size="21" font-weight="700">沖縄 ＋6.6万人泊</text>
+</svg>
