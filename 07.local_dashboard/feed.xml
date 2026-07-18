@@ -7,10 +7,20 @@
     <link>https://hounichi-inbound-data.com/news</link>
     <description>公的統計、独自分析、インバウンド実務ガイドの新着・更新情報を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 17 Jul 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0900</lastBuildDate>
     <atom:link href="https://hounichi-inbound-data.com/feed.xml" rel="self" type="application/rss+xml" />
     <generator>inbound build_news.py</generator>
     <ttl>1440</ttl>
+    <item>
+      <title>京都・大阪・東京の宿泊税を予約表示へ反映する5手順</title>
+      <link>https://hounichi-inbound-data.com/news/2026-07-accommodation-tax-comparison</link>
+      <guid isPermaLink="true">https://hounichi-inbound-data.com/news/2026-07-accommodation-tax-comparison</guid>
+      <description>京都・大阪・東京では宿泊税の税率、課税対象、施行日が異なります。予約日ではなく宿泊日を基準に、料金マスター、予約画面、事前案内、現地徴収、領収書を更新する手順を公式資料から整理します。 （公開日：2026年7月18日／更新日：2026年7月18日）</description>
+      <category>実務ガイド</category>
+      <dc:creator>インバウンド動向ダッシュボード編集部</dc:creator>
+      <dc:date>2026-07-18</dc:date>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>口コミを不満分類・返信・改善・再訪につなぐ運用設計</title>
       <link>https://hounichi-inbound-data.com/news/2026-07-review-repeat-operations</link>
