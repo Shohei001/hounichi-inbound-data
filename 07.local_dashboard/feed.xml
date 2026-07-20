@@ -7,10 +7,20 @@
     <link>https://hounichi-inbound-data.com/news</link>
     <description>公的統計、独自分析、インバウンド実務ガイドの新着・更新情報を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0900</lastBuildDate>
     <atom:link href="https://hounichi-inbound-data.com/feed.xml" rel="self" type="application/rss+xml" />
     <generator>inbound build_news.py</generator>
     <ttl>1440</ttl>
+    <item>
+      <title>6月315万人を上半期・宿泊・消費で更新する判断表</title>
+      <link>https://hounichi-inbound-data.com/news/2026-06-inbound-update-table</link>
+      <guid isPermaLink="true">https://hounichi-inbound-data.com/news/2026-06-inbound-update-table</guid>
+      <description>2026年6月の訪日外客数は314万8,600人で前年同月比6.8%減。一方で上半期は2,108万4,800人、15市場が6月として過去最高、4-6月期の消費単価は24.4万円でした。人数、宿泊、消費を同じ判断表に分けます。 （公開日：2026年7月20日／更新日：2026年7月20日）</description>
+      <category>独自レポート</category>
+      <dc:creator>インバウンド動向ダッシュボード編集部</dc:creator>
+      <dc:date>2026-07-20</dc:date>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>京都・大阪・東京の宿泊税を予約表示へ反映する5手順</title>
       <link>https://hounichi-inbound-data.com/news/2026-07-accommodation-tax-comparison</link>
