@@ -7,10 +7,20 @@
     <link>https://hounichi-inbound-data.com/news</link>
     <description>公的統計、独自分析、インバウンド実務ガイドの新着・更新情報を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 00:00:00 +0900</lastBuildDate>
     <atom:link href="https://hounichi-inbound-data.com/feed.xml" rel="self" type="application/rss+xml" />
     <generator>inbound build_news.py</generator>
     <ttl>1440</ttl>
+    <item>
+      <title>手ぶら観光を混雑対策に使う地域が測る4指標</title>
+      <link>https://hounichi-inbound-data.com/news/2026-07-hands-free-tourism-kpi</link>
+      <guid isPermaLink="true">https://hounichi-inbound-data.com/news/2026-07-hands-free-tourism-kpi</guid>
+      <description>手荷物配送・一時預かりは、導入しただけでは混雑対策になりません。観光庁、JNTO、福岡の公開情報を照合し、利用率、荷物圧力、案内摩擦、回遊変化の4指標で検証する手順を整理します。 （公開日：2026年7月21日／更新日：2026年7月21日）</description>
+      <category>実務ガイド</category>
+      <dc:creator>インバウンド動向ダッシュボード編集部</dc:creator>
+      <dc:date>2026-07-21</dc:date>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>6月315万人を上半期・宿泊・消費で更新する判断表</title>
       <link>https://hounichi-inbound-data.com/news/2026-06-inbound-update-table</link>
