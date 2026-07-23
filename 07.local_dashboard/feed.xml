@@ -7,10 +7,20 @@
     <link>https://hounichi-inbound-data.com/news</link>
     <description>公的統計、独自分析、インバウンド実務ガイドの新着・更新情報を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Jul 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 00:00:00 +0900</lastBuildDate>
     <atom:link href="https://hounichi-inbound-data.com/feed.xml" rel="self" type="application/rss+xml" />
     <generator>inbound build_news.py</generator>
     <ttl>1440</ttl>
+    <item>
+      <title>速報・暫定・確報を分ける統計記事の更新手順</title>
+      <link>https://hounichi-inbound-data.com/news/2026-07-statistics-update-rules</link>
+      <guid isPermaLink="true">https://hounichi-inbound-data.com/news/2026-07-statistics-update-rules</guid>
+      <description>観光統計を引用する記事やダッシュボードは、速報値が出た日に全部を書き換えるより、推計値、暫定値、確定値、調査計画の違いを分けて更新した方が安全です。JNTO、観光庁、e-Statの一次情報を使い、更新台帳と判定表に落とします。 （公開日：2026年7月24日／更新日：2026年7月24日）</description>
+      <category>実務ガイド</category>
+      <dc:creator>インバウンド動向ダッシュボード編集部</dc:creator>
+      <dc:date>2026-07-24</dc:date>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>手ぶら観光を混雑対策に使う地域が測る4指標</title>
       <link>https://hounichi-inbound-data.com/news/2026-07-hands-free-tourism-kpi</link>
